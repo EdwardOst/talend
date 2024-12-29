@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+talend_script_path=$(readlink -e "${BASH_SOURCE[0]}")
+talend_script_dir="${talend_script_path%/*}"
+
+# shellcheck source=talend_config.sh
+source "${talend_script_dir}/talend_config.sh"
+
+# shellcheck source=talend_setup.sh
+source "${talend_script_dir}/talend_setup.sh"
+
+## shellcheck source=talend_tac.sh
+#source "${talend_script_dir}/talend_tac.sh"
+
+## shellcheck source=talend_nexus.sh
+#source "${talend_script_dir}/talend_nexus.sh"
+
+## shellcheck source=talend_jobserver.sh
+#source "${talend_script_dir}/talend_jobserver.sh"
+
+## shellcheck source=talend_runtime.sh
+#source "${talend_script_dir}/talend_runtime.sh"

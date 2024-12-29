@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+declare -r page="${1:-Code-Lab-Example.md}"
+declare -r repo="${2:-dev}"
+declare -r user="${3:-EdwardOst}"
+declare -r token_file="${4:-token.secret}"
+
+if [[ "${1}" == "-h" || "${1}" == "--h" || "${1}" == "--help" ]]; then
+  echo "usage: ${0} [ page [ repo [ user [ token_file ]]]]"
+  exit 0
+fi
+
+IFS='' read -r token < "${token_file}"
+readonly token
+
+curl "https://${token}@raw.githubusercontent.com/wiki/${user}/${repo}/${page}" > "${page}"
+
+
+# works for public repos
+#curl "https://raw.githubusercontent.com/wiki/${user}/${repo}/${page}"
+
+#curl -H "Authorization: token ${TOKEN}" "https://raw.githubusercontent.com/wiki/${user}/${repo}/${page}"
+
