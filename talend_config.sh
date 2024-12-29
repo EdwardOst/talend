@@ -61,6 +61,9 @@ talend_config() {
 
 talend() {
 
+  if [ $# -gt 0 ] && [ "config" = "${1}" ]; then
+    shift 1
+  fi
   talend_config "${@}"
 
 }
