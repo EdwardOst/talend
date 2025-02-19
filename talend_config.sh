@@ -24,9 +24,6 @@ talend_config() {
   local -r talend_tac_container_port="${talend_tac_container_port:-8080}"
   local -r talend_tac_container_name="${talend_tac_container_name:-tac}"
 
-  # These shell variables in the host OS are mapped to environment variables in the docker image.
-  # The shell variables have the same name as the environment variables but are lowercase.
-
   # TALEND_ROOT_PASSWORD
   # This variable is mandatory and specifies the password that will be set for the talend root superuser account.
   local -r talend_root_password="${talend_root_password:-tadmin}"
